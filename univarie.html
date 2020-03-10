@@ -24,7 +24,8 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         
-        <link href="lib/app/variables.css" rel="stylesheet">
+        <link href="lib/ion.rangeSlider.min.css" rel="stylesheet">
+        <link href="lib/app/univarie.css" rel="stylesheet">
     </head>
 
     <body>
@@ -66,7 +67,7 @@
             <p>Vous pouvez choisir ce-dessous la variable <strong>quantitative</strong> à analyser.</p>
             <div class="row" id="univarie_quanti">
                 <div class="col-md-4">
-                    <form class="well">
+                    <form class="well" id="univarie_form">
                         <div class="form-group">
                             <label class="control-label">Variable</label>
                             <select class="form-control" id="univarie_quanti_var">
@@ -75,14 +76,45 @@
                         <div class="form-group">
                             <label class="control-label">Type de représentation</label>
                             <select class="form-control" id="univarie_quanti_type">
-                                <option value="num">Numérique</option>
+                                <option value="num" selected>Numérique</option>
                                 <option value="hist">Histogramme</option>
                                 <option value="box">Boîte à moustaches</option>
                             </select>
                         </div>
+                        <div class="form-group" id="opt_hist">
+                            <label class="control-label">Options</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="opt_histc" value="occ" id="opt_hist1" checked>
+                                <label class="form-check-label" for="opt_hist1">
+                                    Occurences, par nombre d'intervalles
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="opt_histc" value="dens" id="opt_hist2">
+                                <label class="form-check-label" for="opt_hist2">
+                                    En densité, par nombre d'intervalles
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="opt_histc" value="pers" id="opt_hist3">
+                                <label class="form-check-label" for="opt_hist3">
+                                    En densité, avec intervalles personnalisés
+                                </label>
+                            </div>
+                            <div id="opt_hist_nb">
+                                <label class="control-label">Nombre d'intervalles</label>
+                                <input id="opt_hist_slider"></input>                        
+                            </div>
+                            <div id="opt_hist_breaks">
+                                <span class="help-block">Rappel, l'étendue des données est : <span id="etendue"></span></span>
+                                <label class="control-label">Bornes des intervalles</label>
+                                <input type="text" class="form-control" placeholder="lister les bornes ici" id="opt_hist_text"></input>
+                            </div>
+                        </div>
                         <button type="button" id="univarie_quanti_go" data-loading-text="Chargement..." class="btn btn-primary">
                             Chargement
                         </button>
+                        
                     </form>
                 </div>
                 <div class="col-md-8">
@@ -100,8 +132,20 @@
         <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
         
         <script src="lib/d3.min.js"></script>
+        <script src="lib/ion.rangeSlider.min.js"></script>
+        <script>
+            $("#opt_hist_slider").ionRangeSlider({
+                min: 2,
+                max: 100,
+                from: 10,
+                skin: "big"
+            });
+        </script>
         
         <script src="lib/app/global.js"></script>
+        <script src="lib/app/univarie_numerique.js"></script>
+        <script src="lib/app/univarie_histogramme.js"></script>
+        <script src="lib/app/univarie_boxplot.js"></script>
         <script src="lib/app/univarie.js"></script>
         
     </body>

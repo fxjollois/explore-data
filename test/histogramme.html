@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test | Histogramme</title>
+    </head>
+
+    <body>
+
+        <div id="univarie_quanti_desc"></div>
+        <div id="truc"></div>
+
+        <script src="../lib/d3.min.js"></script>
+        
+        <script src="../lib/app/histogramme.js">
+            
+        </script>
+
+        <script>
+            var valeurs = [], n = 100;
+            for (var i = 0; i < n; i++) {
+                valeurs.push(5 * (Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) / 6);
+                // valeurs.push(Math.random());
+            }
+            afficheHistogramme(valeurs, "#univarie_quanti_desc", 10, true);
+        </script>
+    </body>
+</html>
