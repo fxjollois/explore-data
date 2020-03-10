@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        
+        <meta name="description" content="Web interface to explore data">
+        <meta name="author" content="FX Jollois">
+        <!-- <link rel="icon" href="../../favicon.ico"> -->
+        
+        <title>explore-data | Visualisation des variables</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="lib/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <link href="lib/app/variables.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">explore-data</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="donnees.html">Données</a></li>
+                        <li><a href="variables.html">Variables</a></li>
+                        <li><a href="#">Sous-population</a></li>
+                        <li class="active"><a href="">Univarié</a></li>
+                        <li><a href="#">Bivarié</a></li>
+                        <li><a href="#">Plus</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1>Statistique univarié</h1>
+            <div id="univarie"></div>
+            
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="univarie.html" id="choix_univarie_quanti">Quantitatif</a></li>
+                <li role="presentation" class="active"><a href="" id="choix_univarie_quali">Qualitatif</a></li>
+            </ul>
+            
+            <p>Vous pouvez choisir ce-dessous la variable <strong>qualitative</strong> à analyser.</p>
+            <div class="row" id="univarie_quali">
+                <div class="col-md-4">
+                    <form class="well">
+                        <div class="form-group">
+                            <label class="control-label">Variable</label>
+                            <select class="form-control" id="univarie_quali_var">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Type de représentation</label>
+                            <select class="form-control" id="univarie_quali_type">
+                                <option>Numérique</option>
+                                <option>Histogramme</option>
+                                <option>Boîte à moustaches</option>
+                            </select>
+                        </div>
+                        <button type="button" id="univarie_quali_go" data-loading-text="Chargement..." class="btn btn-primary">
+                            Chargement
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <h2>Description de la variable choisie</h2>
+                    <div id="univarie_quali_desc"></div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+        
+        <!-- Bootstrap core JavaScript  ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="lib/jquery-3.4.1.min.js"></script>
+        <script src="lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+        
+        <script src="lib/d3.min.js"></script>
+        
+        <script src="lib/app/global.js"></script>
+        <script src="lib/app/univarie.js"></script>
+        
+    </body>
+</html>
