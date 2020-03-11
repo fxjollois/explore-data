@@ -66,7 +66,7 @@
             <p>Vous pouvez choisir ce-dessous la variable <strong>qualitative</strong> à analyser.</p>
             <div class="row" id="univarie_quali">
                 <div class="col-md-4">
-                    <form class="well">
+                    <form class="well" id="univarie2_form">
                         <div class="form-group">
                             <label class="control-label">Variable</label>
                             <select class="form-control" id="univarie_quali_var">
@@ -75,9 +75,9 @@
                         <div class="form-group">
                             <label class="control-label">Type de représentation</label>
                             <select class="form-control" id="univarie_quali_type">
-                                <option>Numérique</option>
-                                <option>Histogramme</option>
-                                <option>Boîte à moustaches</option>
+                                <option value="num" selected>Numérique</option>
+                                <option value="bar">Diagramme en barres</option>
+                                <option value="pie">Diagramme circulaire</option>
                             </select>
                         </div>
                         <button type="button" id="univarie_quali_go" data-loading-text="Chargement..." class="btn btn-primary">
@@ -102,7 +102,7 @@
         <script src="lib/d3.min.js"></script>
         
         <script src="lib/app/global.js"></script>
-        <script src="lib/app/univarie.js"></script>
+        <script src="lib/app/univarie2.js"></script>
         
     </body>
 </html>
