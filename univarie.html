@@ -13,7 +13,7 @@
         <title>explore-data | Visualisation des variables</title>
         
         <!-- Bootstrap core CSS -->
-        <link href="lib/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="lib/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
@@ -30,28 +30,20 @@
 
     <body>
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">explore-data</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="donnees.html">Données</a></li>
-                        <li><a href="variables.html">Variables</a></li>
-                        <li><a href="#">Sous-population</a></li>
-                        <li class="active"><a href="">Univarié</a></li>
-                        <li><a href="#">Bivarié</a></li>
-                        <li><a href="#">Plus</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">explore-data</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="donnees.html">Données</a></li>
+                    <li class="nav-item"><a class="nav-link" href="variables.html">Variables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sous-population</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="">Univarié</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Bivarié</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Plus</a></li>
+                </ul>
             </div>
         </nav>
 
@@ -60,21 +52,21 @@
             <div id="univarie"></div>
             
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="" id="choix_univarie_quanti">Quantitatif</a></li>
-                <li role="presentation"><a href="univarie2.html" id="choix_univarie_quali">Qualitatif</a></li>
+                <li class="nav-item"><a class="nav-link active" href="">Quantitatif</a></li>
+                <li class="nav-item"><a class="nav-link" href="univarie2.html">Qualitatif</a></li>
             </ul>
             
             <p>Vous pouvez choisir ce-dessous la variable <strong>quantitative</strong> à analyser.</p>
             <div class="row" id="univarie_quanti">
-                <div class="col-md-4">
-                    <form class="well" id="univarie_form">
+                <div class="col-md-4 card bg-light">
+                    <form id="univarie_form">
                         <div class="form-group">
-                            <label class="control-label">Variable</label>
+                            <label for="univarie_quanti_var">Variable</label>
                             <select class="form-control" id="univarie_quanti_var">
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Type de représentation</label>
+                            <label for="univarie_quanti_type">Type de représentation</label>
                             <select class="form-control" id="univarie_quanti_type">
                                 <option value="num" selected>Numérique</option>
                                 <option value="hist">Histogramme</option>
@@ -82,7 +74,7 @@
                             </select>
                         </div>
                         <div class="form-group" id="opt_hist">
-                            <label class="control-label">Options</label>
+                            <label>Options</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="opt_histc" value="occ" id="opt_hist1" checked>
                                 <label class="form-check-label" for="opt_hist1">
@@ -102,16 +94,16 @@
                                 </label>
                             </div>
                             <div id="opt_hist_nb">
-                                <label class="control-label">Nombre d'intervalles</label>
+                                <label for="opt_hist_slider">Nombre d'intervalles</label>
                                 <input id="opt_hist_slider">                       
                             </div>
                             <div id="opt_hist_breaks">
-                                <span class="help-block">Rappel, l'étendue des données est : <span id="etendue"></span></span>
-                                <label class="control-label">Bornes des intervalles</label>
+                                <small class="form-text text-muted">Rappel, l'étendue des données est : <span id="etendue"></span></small>
+                                <label for="opt_hist_text">Bornes des intervalles</label>
                                 <input type="text" class="form-control" placeholder="lister les bornes ici" id="opt_hist_text">
                             </div>
                         </div>
-                        <button type="button" id="univarie_quanti_go" data-loading-text="Chargement..." class="btn btn-primary">
+                        <button type="button" id="univarie_quanti_go" class="btn btn-primary">
                             Chargement
                         </button>
                         
@@ -127,7 +119,7 @@
         <!-- Bootstrap core JavaScript  ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="lib/jquery-3.4.1.min.js"></script>
-        <script src="lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+        <script src="lib/bootstrap-4.0.0/js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
         

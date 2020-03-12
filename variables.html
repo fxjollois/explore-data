@@ -13,7 +13,7 @@
         <title>explore-data | Visualisation des variables</title>
         
         <!-- Bootstrap core CSS -->
-        <link href="lib/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="lib/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
@@ -28,42 +28,32 @@
     </head>
 
     <body>
-
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">explore-data</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="donnees.html">Données</a></li>
-                        <li class="active"><a href="">Variables</a></li>
-                        <li><a href="#">Sous-population</a></li>
-                        <li><a href="univarie.html">Univarié</a></li>
-                        <li><a href="#">Bivarié</a></li>
-                        <li><a href="#">Plus</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">explore-data</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="donnees.html">Données</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="">Variables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sous-population</a></li>
+                    <li class="nav-item"><a class="nav-link" href="univarie.html">Univarié</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Bivarié</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Plus</a></li>
+                </ul>
             </div>
         </nav>
 
         <div class="container">
             <h1>Détail des variables</h1>
-            <p class="lead">...</p>
             <div id="summary"></div>
         </div><!-- /.container -->
         
         <!-- Bootstrap core JavaScript  ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="lib/jquery-3.4.1.min.js"></script>
-        <script src="lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+        <script src="lib/bootstrap-4.0.0/js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
         
