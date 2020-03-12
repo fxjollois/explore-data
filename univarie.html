@@ -58,56 +58,58 @@
             
             <p>Vous pouvez choisir ce-dessous la variable <strong>quantitative</strong> à analyser.</p>
             <div class="row" id="univarie_quanti">
-                <div class="col-md-4 card bg-light">
-                    <form id="univarie_form">
-                        <div class="form-group">
-                            <label for="univarie_quanti_var">Variable</label>
-                            <select class="form-control" id="univarie_quanti_var">
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="univarie_quanti_type">Type de représentation</label>
-                            <select class="form-control" id="univarie_quanti_type">
-                                <option value="num" selected>Numérique</option>
-                                <option value="hist">Histogramme</option>
-                                <option value="box">Boîte à moustaches</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="opt_hist">
-                            <label>Options</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="opt_histc" value="occ" id="opt_hist1" checked>
-                                <label class="form-check-label" for="opt_hist1">
-                                    Occurences, par nombre d'intervalles
-                                </label>
+                <div class="col-md-4">
+                    <div class="p-3 card bg-light">
+                        <form id="univarie_form">
+                            <div class="form-group">
+                                <label for="univarie_quanti_var">Variable</label>
+                                <select class="form-control" id="univarie_quanti_var">
+                                </select>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="opt_histc" value="dens" id="opt_hist2">
-                                <label class="form-check-label" for="opt_hist2">
-                                    En densité, par nombre d'intervalles
-                                </label>
+                            <div class="form-group">
+                                <label for="univarie_quanti_type">Type de représentation</label>
+                                <select class="form-control" id="univarie_quanti_type">
+                                    <option value="num" selected>Numérique</option>
+                                    <option value="hist">Histogramme</option>
+                                    <option value="box">Boîte à moustaches</option>
+                                </select>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="opt_histc" value="pers" id="opt_hist3">
-                                <label class="form-check-label" for="opt_hist3">
-                                    En densité, avec intervalles personnalisés
-                                </label>
+                            <div class="form-group" id="opt_hist">
+                                <label>Options</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opt_histc" value="occ" id="opt_hist1" checked>
+                                    <label class="form-check-label" for="opt_hist1">
+                                        Occurences, par nombre d'intervalles
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opt_histc" value="dens" id="opt_hist2">
+                                    <label class="form-check-label" for="opt_hist2">
+                                        En densité, par nombre d'intervalles
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opt_histc" value="pers" id="opt_hist3">
+                                    <label class="form-check-label" for="opt_hist3">
+                                        En densité, avec intervalles personnalisés
+                                    </label>
+                                </div>
+                                <div id="opt_hist_nb">
+                                    <label for="opt_hist_slider">Nombre d'intervalles</label>
+                                    <input id="opt_hist_slider">                       
+                                </div>
+                                <div id="opt_hist_breaks">
+                                    <small class="form-text text-muted">Rappel, l'étendue des données est : <span id="etendue"></span></small>
+                                    <label for="opt_hist_text">Bornes des intervalles</label>
+                                    <input type="text" class="form-control" placeholder="lister les bornes ici" id="opt_hist_text">
+                                </div>
                             </div>
-                            <div id="opt_hist_nb">
-                                <label for="opt_hist_slider">Nombre d'intervalles</label>
-                                <input id="opt_hist_slider">                       
-                            </div>
-                            <div id="opt_hist_breaks">
-                                <small class="form-text text-muted">Rappel, l'étendue des données est : <span id="etendue"></span></small>
-                                <label for="opt_hist_text">Bornes des intervalles</label>
-                                <input type="text" class="form-control" placeholder="lister les bornes ici" id="opt_hist_text">
-                            </div>
-                        </div>
-                        <button type="button" id="univarie_quanti_go" class="btn btn-primary">
-                            Chargement
-                        </button>
-                        
-                    </form>
+                            <button type="button" id="univarie_quanti_go" class="btn btn-primary">
+                                Chargement
+                            </button>
+
+                        </form>
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <h2>Description de la variable choisie</h2>
