@@ -7,11 +7,12 @@
 
     <body>
 
-        <div id="univarie_quanti_desc"></div>
+        <div id="div"></div>
         <div id="truc"></div>
 
         <script src="../lib/d3.min.js"></script>
         
+        <script src="../lib/app/global.js"></script>
         <script src="../lib/app/univarie2_barplot.js"></script>
 
         <script>
@@ -31,8 +32,12 @@
                 valeurs.push(res);
                 // valeurs.push(Math.random());
             }
-            console.log(valeurs);
-            //boxplot(valeurs, "#univarie_quanti_desc");
+            var vals = d3.nest()
+                    .key(function(d) { return d; })
+                    .rollup(function(v) { return v.length; })
+                    .entries(valeurs);
+            console.log(vals);
+            afficheBarplot(vals, "#div");
         </script>
     </body>
 </html>
