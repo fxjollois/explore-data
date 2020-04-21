@@ -1,0 +1,7 @@
+r = list()
+library(jsonlite)
+library(tidyverse)
+write_json(iris, path = "GitHub/explore-data/data/iris.json")
+write_json(mtcars %>% rownames_to_column("car"), path = "GitHub/explore-data/data/mtcars.json")
+write_json(LifeCycleSavings %>% rownames_to_column("country"), path = "GitHub/explore-data/data/LifeCycleSavings.json")
+write_json(diamonds, path = "GitHub/explore-data/data/diamonds.json")
